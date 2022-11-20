@@ -20,6 +20,7 @@ public class LinearFunction {
         System.out.println(sumEven);
     }
 
+    //O(n)
     private static int SumEven(int[] arr) {
         if (arr == null)
             return Integer.MIN_VALUE;
@@ -29,7 +30,7 @@ public class LinearFunction {
         }
         return sum;
     }
-
+    //O(n)
     private static int sumArr(int[] arr) {
         if (arr == null)
             return Integer.MIN_VALUE;
@@ -39,7 +40,7 @@ public class LinearFunction {
         }
         return sum;
     }
-
+    //O(n)
     private static int[] minMx(int[] arr) {
         if (arr == null)
             return null;
