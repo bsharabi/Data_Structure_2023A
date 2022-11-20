@@ -7,6 +7,9 @@ public class MinMax {
 
     public static void main(String[] args) {
        int[] arr = generate(10);
+        for (int i = 0; i < 10; i++) {
+            System.out.println(Arrays.toString(generate(i)));
+        }
        int[] min_max = minMx(arr);
         System.out.println(Arrays.toString(arr));
         System.out.println(Arrays.toString(min_max));
@@ -20,6 +23,10 @@ public class MinMax {
         int min =value;
         for (int i = 1; i < arr.length; i++) {
             value = arr[i];
+//            if(value<min)
+//                min=value;
+//            if(value>max)
+//                max=value;
             min=(value<min)?value:min;
             max=(value>max)?value:max;
         }
