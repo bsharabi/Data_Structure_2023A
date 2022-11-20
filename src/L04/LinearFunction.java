@@ -18,6 +18,17 @@ public class LinearFunction {
         int sumEven = SumEven(arr);
         System.out.println(sum);
         System.out.println(sumEven);
+        for (int i = 2; i < 100; i++) {
+            boolean ans = isPrime(i);
+            if (ans)
+                System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i = 2; i < 100; i++) {
+            boolean ans = isPrime2(i);
+            if (ans)
+                System.out.print(i + " ");
+        }
     }
 
     //O(n)
@@ -30,6 +41,7 @@ public class LinearFunction {
         }
         return sum;
     }
+
     //O(n)
     private static int sumArr(int[] arr) {
         if (arr == null)
@@ -40,6 +52,7 @@ public class LinearFunction {
         }
         return sum;
     }
+
     //O(n)
     private static int[] minMx(int[] arr) {
         if (arr == null)
@@ -66,5 +79,23 @@ public class LinearFunction {
             arr[i] = rd.nextInt(100);
         }
         return arr;
+    }
+
+
+    public static boolean isPrime(int n) {
+        int i = 2;
+        while (n % i != 0) {
+            i++;
+        }
+        return i == n;
+    }
+
+
+    public static boolean isPrime2(int n) {
+        int i = 2;
+        while (n % i != 0 && Math.sqrt(i)<i) {
+            i++;
+        }
+        return i == n;
     }
 }
