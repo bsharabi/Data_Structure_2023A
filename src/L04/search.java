@@ -12,11 +12,12 @@ public class search {
         System.out.println(Arrays.toString(arr));
          ans =BinarySearch();
     }
-
+    //O(log(n))
+    //Suppose the array is sorted
     private static boolean BinarySearch() {
         return true;
     }
-
+    //O(n)
     private static boolean LinearSearch(int[] arr) {
         return true;
     }
