@@ -1,5 +1,7 @@
 package L06;
 
+import java.util.ArrayList;
+
 public class Generic {
 
     static <T> void IsEq(T n1, T n2) {
@@ -10,6 +12,7 @@ public class Generic {
         IsEq(2, 2);
         IsEq("bob", "bob");
         IsEq(true, true);
+
 
     }
 }
