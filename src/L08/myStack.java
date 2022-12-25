@@ -38,11 +38,19 @@ public class myStack<E> {
         return index == 0;
     }
 
-    public E push(E item) throws Exception {
+    public E push(E item)  {
         if (index == arr.length)
-            throw new Exception();
+            init();
         arr[index++] = item;
         return item;
+    }
+
+    private void init() {
+        Object[] newArray = new Object[index*2];
+        for (int i = 0; i < index; i++) {
+            newArray[i]=arr[i];
+        }
+        arr=newArray;
     }
 
     @Override
