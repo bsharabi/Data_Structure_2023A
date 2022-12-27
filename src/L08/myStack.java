@@ -38,7 +38,7 @@ public class myStack<E> {
         return index == 0;
     }
 
-    public E push(E item)  {
+    public E push(E item) {
         if (index == arr.length)
             init();
         arr[index++] = item;
@@ -46,11 +46,11 @@ public class myStack<E> {
     }
 
     private void init() {
-        Object[] newArray = new Object[index*2];
+        Object[] newArray = new Object[index * 2];
         for (int i = 0; i < index; i++) {
-            newArray[i]=arr[i];
+            newArray[i] = arr[i];
         }
-        arr=newArray;
+        arr = newArray;
     }
 
     @Override
