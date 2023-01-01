@@ -1,56 +1,60 @@
 package L09;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Random;
-import java.util.Stack;
-
+import java.util.*;
 public class Main {
-
     public static void main(String[] args) {
-        Queue<Integer> queue = new LinkedList<>();
-        fillQueue(queue);
-        System.out.println(queue);
-        System.out.println(queue.peek());
-        rev(queue);
-        System.out.println(queue);
-        boolean ans = search(queue,8);
+        Queue<Integer> q = new LinkedList<>();
+        fillQueue(q);
+        System.out.println(q);
+        System.out.println(q.peek());
+        rev(q);
+        System.out.println(q);
+        boolean ans = search(q, 8);
         System.out.println(ans);
     }
 
-    private static boolean search(Queue<Integer> queue, int item) {
-        if(queue==null)
+    //O(n)
+    private static void fillQueue(Queue<Integer> q) {
+        Random rd = new Random();
+        for (int i = 0; i < 10; i++) {
+            int item = rd.nextInt(100);
+            System.out.print(item + " ");
+            q.add(item);
+        }
+        System.out.println();
+    }
+
+    //O(n)
+    private static boolean search(Queue<Integer> q, int item) {
+        if (q == null)
             return false;
 
-        boolean flag =false;
-
-        for (int i = 0; i < queue.size(); i++) {
-            int current = queue.poll();
-            if(current==item)
-                flag=true;
-            queue.add(current);
+        boolean flag = false;
+        for (int i = 0; i < q.size(); i++) {
+            int value = q.poll();
+            if (value == item)
+                flag = true;
+            q.add(value);
         }
+
+
+
         return flag;
     }
 
+    //O(n)
     private static void rev(Queue<Integer> queue) {
-        if(queue==null)
+        if (queue == null)
             return;
-
         Stack<Integer> st = new Stack<>();
-
-        while(!queue.isEmpty())
+        while (!queue.isEmpty()) {
             st.push(queue.poll());
-
-        while(!st.isEmpty())
+        }
+        while (!st.isEmpty()) {
             queue.add(st.pop());
-
-    }
-
-    private static void fillQueue(Queue<Integer> queue) {
-        Random rd = new Random();
-        for (int i = 0; i < 10; i++) {
-            queue.add(rd.nextInt(100));
         }
     }
+
+
+
+
 }
