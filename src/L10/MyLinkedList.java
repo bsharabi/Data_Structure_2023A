@@ -56,7 +56,7 @@ public class MyLinkedList<E> implements List<E> {
     @Override
     public boolean add(E e) {
         if (head == null)
-            head = new Node<E>(e);
+            head = new Node<>(e);
         else {
             Node<E> temp = head;
             while (temp.getNext() != null) {
@@ -65,10 +65,16 @@ public class MyLinkedList<E> implements List<E> {
             temp.setNext(new Node(e));
         }
         size++;
-
         return true;
     }
 
+    public boolean addToFirst(E e) {
+        Node<E> temp = new Node<>(e);
+        temp.setNext(head);
+        head=temp;
+        size++;
+        return true;
+    }
     public void print() {
         if (head == null)
             System.out.println("head->null");
@@ -179,11 +185,6 @@ class Node<E> {
     private E value;
     private Node<E> next = null;
 
-    public Node(E value, Node<E> next) {
-        this.value = value;
-        this.next = next;
-    }
-
     public Node(E value) {
         this.value = value;
     }
@@ -213,3 +214,4 @@ class Node<E> {
     }
 
 }
+

@@ -14,6 +14,7 @@ public class Main2 {
         Data2<Float> dF = new Data2<>(5.6f);
         Data2<Double> dD = new Data2<>(58.98);
 
+
         ArrayList<Integer> l = new ArrayList<Integer>();
         int i = 5;
         float f = 5.6f;
