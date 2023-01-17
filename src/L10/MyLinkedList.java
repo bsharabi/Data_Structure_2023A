@@ -27,6 +27,7 @@ public class MyLinkedList<E> implements List<E> {
 
     @Override
     public boolean contains(Object o) {
+
         if (head == null)
             return false;
         else {
@@ -75,6 +76,7 @@ public class MyLinkedList<E> implements List<E> {
         size++;
         return true;
     }
+
     public void print() {
         if (head == null)
             System.out.println("head->null");
