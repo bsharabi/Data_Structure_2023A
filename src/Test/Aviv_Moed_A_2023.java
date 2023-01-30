@@ -22,6 +22,14 @@ public class Aviv_Moed_A_2023 {
             System.out.println("Enter q number or to exit -1");
             switch (sc.nextInt()) {
                 case 1:
+                    // 1 O(inf)
+                    // 2 O(n^2)
+                    // 3 O(n^2)
+                    // 4 O(inf)
+
+                    // 1 O(1)
+                    // 2 O(1)
+                    // 3 O(1)
                     break;
                 case 2:
                     Stack<Integer> st = new Stack<Integer>() {{
